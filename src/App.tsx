@@ -1,15 +1,11 @@
-import React from 'react';
-import { Row } from '@components/Row';
-import { data } from './data';
+import { Todos } from "@components/Todos";
 
 function App() {
   return (
-    <section>
-      {data.map((element) => (
-        <Row key={element.id} todo={element} />
-      ))}
-    </section>
-  )
+    <div>
+      <Todos />
+    </div>
+  );
 }
 
 export default App;

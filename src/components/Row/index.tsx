@@ -1,23 +1,28 @@
-type Todo = {
-  id: string,
-  task: string,
-  isCompleted: boolean
+export type Props = {
+  todo: Todo;
+  handleDeleteTodo: (id: string) => void;
+  handleCheckTodo: (id: string) => void;
 }
 
-type TodoProps = {
-  todo: Todo
-}
-
-export const Row = ({ todo: { task, isCompleted } }: TodoProps) => {
-  return (
+export const Row = ({
+  todo: { id, task, isCompleted },
+  handleDeleteTodo,
+  handleCheckTodo,
+}: Props) => (
+  <div>
+    <p>{task}</p>
     <div>
-      <p>{task}</p>
-      <div>
-        <button aria-label="Delete a todo" onClick={() => null}>
-          X
-        </button>
-        <input type="checkbox" checked={isCompleted} onChange={() => null} />
-      </div>
+      <button
+        aria-label="Delete a task"
+        onClick={() => handleDeleteTodo(id)}
+      >
+        X
+      </button>
+      <input
+        type="checkbox"
+        checked={isCompleted}
+        onChange={() => handleCheckTodo(id)}
+      />
     </div>
-  );
-}
+  </div>
+);
