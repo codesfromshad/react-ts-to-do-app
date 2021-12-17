@@ -13,6 +13,6 @@ module.exports = {
            are specified*/
            tsConfigPath: "./tsconfig.paths.json"
          }
-      }
+      },
    ]
 }
