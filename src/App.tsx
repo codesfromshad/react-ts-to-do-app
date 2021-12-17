@@ -1,12 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Row } from '@components/Row';
+import { data } from './data';
 
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <section>
+      {data.map((element) => (
+        <Row key={element.id} todo={element} />
+      ))}
+    </section>
   )
 }
 
